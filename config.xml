@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.mycortex.webrtc" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>iosrtc</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="*" />
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-navigation href="data:*" />
+    <platform name="ios">
+        <custom-config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
+           <string>Access to front and back camera to make video calls.</string>
+         </custom-config-file>
+         <custom-config-file parent="NSMicrophoneUsageDescription" platform="ios" target="*-Info.plist">
+           <string>This Application uses your microphone to make calls.</string>
+         </custom-config-file>
+         
+         <feature name="CDVWKWebViewEngine">
+            <param name="ios-package" value="CDVWKWebViewEngine" />
+          </feature>
+          <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
+          <preference name="WKWebViewOnly" value="true" />
+          <config-file parent="CFBundleDisplayName" platform="ios" target="*-Info.plist">
+              <string>CortexVideoConference</string>
+          </config-file>
+         <!-- <preference name="UIWebViewDecelerationSpeed" value="normal" />-->
+          
+       <!--   <preference name="MediaPlaybackRequiresUserAction" value="true"/> -->
+       <preference name="MediaTypesRequiringUserActionForPlayback" value="true"/>
+           <preference name="AllowInlineMediaPlayback" value="true"/>
+          <preference name="CRIInjectFirstFiles" value="www/js/listener.js" />
+          <!--new commit-->
+          <preference name="PaginationBreakingMode" value="page"/>
+          <preference name="EnableViewportScale" value="true"/>
+          <preference name="BackupWebStorage" value="local"/>
+          <preference name="TopActivityIndicator" value="white"/>
+          <preference name="PaginationBreakingMode" value="page"/>
+          <preference name="UIWebViewDecelerationSpeed" value="normal" />
+    </platform>
+    
+</widget>
